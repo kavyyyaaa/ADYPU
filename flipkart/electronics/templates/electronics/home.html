@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Product List</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* Grid container */
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Card Flip Effect */
+        .product-card {
+            perspective: 1000px;
+            width: 100%;
+            height: 280px;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .product-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and Back of Card */
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(255, 255, 255, 0.1);
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        /* Front Side */
+        .card-front {
+            background: linear-gradient(135deg, #ffcccb, #ff7f7f);
+        }
+        .product-card:nth-child(2) .card-front { background: linear-gradient(135deg, #add8e6, #6495ED); } /* Light Blue */
+        .product-card:nth-child(3) .card-front { background: linear-gradient(135deg, #90ee90, #32CD32); } /* Light Green */
+        .product-card:nth-child(4) .card-front { background: linear-gradient(135deg, #fdfd96, #FFD700); } /* Light Yellow */
+        .product-card:nth-child(5) .card-front { background: linear-gradient(135deg, #d8bfd8, #9370DB); } /* Light Purple */
+        .product-card:nth-child(6) .card-front { background: linear-gradient(135deg, #ffb6c1, #FF69B4); } /* Light Pink */
+
+        /* Back Side */
+        .card-back {
+            background: #1e1e1e;
+            transform: rotateY(180deg);
+            color: #f0f0f0;
+        }
+
+        /* Card Title */
+        .card-front h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-front p {
+            font-size: 14px;
+            color: #444;
+        }
+
+        /* Price */
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-top: 10px;
+        }
+
+        /* Buy Now Button */
+        .buy-button {
+            background-color: #ff5733;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s ease-in-out, transform 0.2s;
+        }
+
+        .buy-button:hover {
+            background-color: #c70039;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Our Premium Products</h1>
+
+    <div class="product-container">
+        <div class="product-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Laptop</h2>
+                    <p>High-performance laptop for professionals</p>
+                    <p class="price">$999</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+                <div class="card-back">
+                    <p><strong>Processor:</strong> Intel i7</p>
+                    <p><strong>RAM:</strong> 16GB</p>
+                    <p><strong>Storage:</strong> 512GB SSD</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Smartphone</h2>
+                    <p>Latest model with stunning camera</p>
+                    <p class="price">$699</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+                <div class="card-back">
+                    <p><strong>Camera:</strong> 108MP</p>
+                    <p><strong>Battery:</strong> 5000mAh</p>
+                    <p><strong>Display:</strong> 6.5" AMOLED</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Headphones</h2>
+                    <p>Noise-cancelling over-ear headphones</p>
+                    <p class="price">$199</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+                <div class="card-back">
+                    <p><strong>Noise Canceling:</strong> Yes</p>
+                    <p><strong>Battery Life:</strong> 30 hours</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2>Smartwatch</h2>
+                    <p>Fitness tracking and notifications</p>
+                    <p class="price">$249</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+                <div class="card-back">
+                    <p><strong>Heart Rate Monitor:</strong> Yes</p>
+                    <p><strong>Water Resistant:</strong> Yes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
